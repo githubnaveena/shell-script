@@ -1,4 +1,4 @@
 #!/bin/bash
 
-PERSONS=("Navi""cho""ch""srini")
+PERSONS=("Navi" "cho""ch" "srini")
 echo "frist person is ${PERSONS[0]}"
