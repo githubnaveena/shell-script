@@ -13,7 +13,7 @@ validate()
  echo -e "$G $1 Sucess $N" 
 }
 
-}
+
 for i in {@}
 do
     sudo yum install $@ -y
