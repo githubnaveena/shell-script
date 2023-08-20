@@ -15,7 +15,7 @@ fi
 
 validate()
 {
- if [ $1 -ne 0]
+ if [ $1 -ne 0 ]
   then
  echo -e "$R $2 is Failure $N"
  else
@@ -27,7 +27,7 @@ for i in $@
 do
     yum list installed $i &>>$LOGFILE
     if[ $? -ne 0 ]
-   then
+    then
         echo -e "$R package $i is not installed, lets install$N"
         yum install $i -y &>>$LOGFILE
     else
