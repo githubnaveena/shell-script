@@ -8,9 +8,9 @@ then
  #else
   #  echo "Please get root user access"   
 fi
-yum install mysql -y
+yum install mysqll -y
 
-if [$? -ne 0 ]
+if [ $? -ne 0 ]
 then
  echo "installing is not sucess"
  exit 1
