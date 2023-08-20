@@ -1,6 +1,6 @@
 #!/bin/bash
 APP_LOGS_DIR=/app-logs
-echo "$App_LOGS_DIR
+echo "$APP_LOGS_DIR"
 
 # SCRIPTNAME=$0
 # DATE=$(date +%F)
