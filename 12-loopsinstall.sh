@@ -1,8 +1,14 @@
 #!/bin/bash
 
-R="\e[32m"
-G="\e[31m"
+R="\e[31m"
+G="\e[32m"
 N="\e[0m"
+userid=$(id -u)
+if [ $userid -ne 0 ]
+then
+echo -e "$R get root access $N"
+exit 1
+fi
 
 validate()
 {
@@ -15,6 +21,6 @@ validate()
 
 for i in {@}
 do
-    sudo yum install $@ -y
+    sudo yum install $i -y
     validate $i
 done
