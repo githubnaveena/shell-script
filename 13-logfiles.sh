@@ -1,5 +1,5 @@
 #!/bin/bash
-APP_LOGS_DIR=/app-logs
+APP_LOGS_DIR=./app-logs
 echo "$APP_LOGS_DIR"
 
 # SCRIPTNAME=$0
