@@ -27,6 +27,7 @@ do
    if [ yum list installed $i -ne 0 ]
         yum install $i -y >>$LOGFILE
     else
-        echo "$G package is already installed$N"    
+        echo "$G package is already installed$N"  
+    fi      
     validate $i
 done
