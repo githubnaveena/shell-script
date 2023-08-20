@@ -25,6 +25,7 @@ fi
 for i in $@
 do
    if [ yum list installed $i -ne 0 ]
+   then
         yum install $i -y >>$LOGFILE
     else
         echo "$G package is already installed$N"  
