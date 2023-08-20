@@ -1,6 +1,6 @@
 #!/bin/bash
-VAR=$1
-VAR=$2
+VAR1=$1
+VAR2=$2
 
 echo " Variable 1 =$VAR1"
 echo " All Variables = $@"
