@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATE =$(date %F)
+DATE =$(date +%F)
 SCRIPTNAME=$0
 LOGFILE=/tmp/SCRIPTNAME-DATE.log
 validate()
