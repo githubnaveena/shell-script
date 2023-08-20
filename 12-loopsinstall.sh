@@ -13,22 +13,25 @@ echo -e "$R get root access $N"
 exit 1
 fi
 
-# validate()
-# {
-#  if [ $1 =ne 0]
-#   then
-#  echo -e "$R $1 is Failure $N"
-#  else
-#  echo -e "$G $1 Sucess $N" 
-# }
+validate()
+{
+ if [ $1 -ne 0]
+  then
+ echo -e "$R $2 is Failure $N"
+ else
+ echo -e "$G $2 Sucess $N" 
+ fi
+}
 
 for i in $@
 do
-   if [ yum list installed $i -ne 0 ]
+    yum list installed $i &>>$LOGFILE
+    if[ $? -ne 0 ]
    then
-        yum install $i -y >>$LOGFILE
+        echo -e "$R package $i is not installed, lets install$N"
+        yum install $i -y &>>$LOGFILE
     else
-        echo "$G package is already installed$N"  
+        echo -e "$G package is already installed$N"  
     fi      
-    validate $i
+    validate $? "$i"
 done
