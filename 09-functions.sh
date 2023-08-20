@@ -22,9 +22,9 @@ then
  #else
   #  echo "Please get root user access"   
 fi
-yum install mysql -y &>>LOGFILE
+yum install mysql -y &>>$LOGFILE
 validate $? "Installation of mysql"
- yum install postfix -y &>>LOGFILE
+ yum install postfix -y &>>$LOGFILE
  validate $? "Installato of postfix"
  
 
