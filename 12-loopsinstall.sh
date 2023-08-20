@@ -2,5 +2,5 @@
 
 for i in {@}
 do
-    yum install $@ -y
+    sudo yum install $@ -y
 done
