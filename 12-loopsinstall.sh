@@ -26,7 +26,7 @@ validate()
 for i in $@
 do
     yum list installed $i &>>$LOGFILE
-    if[ $? -ne 0 ]
+    if [ $? -ne 0 ]
     then
         echo -e "$R package $i is not installed, lets install$N"
         yum install $i -y &>>$LOGFILE
