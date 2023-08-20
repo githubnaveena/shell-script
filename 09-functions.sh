@@ -7,10 +7,10 @@ validate()
 {
 if [ $1 -ne 0 ]
 then
- echo "installing of $2 FAILURE"
+ echo "$2 FAILURE"
  exit 1
  else 
- echo " instllation of $2 SUCCESS"
+ echo "$2 SUCCESS"
  fi
  }
 
@@ -23,9 +23,9 @@ then
   #  echo "Please get root user access"   
 fi
 yum install mysql -y &>>LOGFILE
-validate $? mysql
+validate $? "Installation of mysql"
  yum install postfix -y &>>LOGFILE
- validate $? postfix
+ validate $? "Installato of postfix"
  
 
     
