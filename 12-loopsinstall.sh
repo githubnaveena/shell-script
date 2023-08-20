@@ -31,7 +31,8 @@ do
         echo -e "$R package $i is not installed, lets install$N"
         yum install $i -y &>>$LOGFILE
     else
-        echo -e "$G package is already installed$N"  
+        echo -e "$G $i package is already installed$N"  
+        exit 1
     fi      
     validate $? "$i"
 done
