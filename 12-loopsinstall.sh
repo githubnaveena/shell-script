@@ -3,6 +3,9 @@
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+SCRIPTNAME=$0
+DATE=$(date +%F)
+LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
 userid=$(id -u)
 if [ $userid -ne 0 ]
 then
@@ -19,8 +22,11 @@ fi
 #  echo -e "$G $1 Sucess $N" 
 # }
 
-for i in @
+for i in $@
 do
-    yum install $i -y
-    #validate $i
+   if [ yum list installed $i -ne 0 ]
+        yum install $i -y >>$LOGFILE
+    else
+        echo "$G package is already installed$N"    
+    validate $i
 done
