@@ -17,5 +17,15 @@ then
  else 
  echo " instllation is success"
  fi
+
+ yum install pstfix -y
+ if [ $? -ne 0 ]
+then
+ echo "installing is not sucess"
+ exit 1
+ else 
+ echo " instllation is success"
+ fi
+
     
 
