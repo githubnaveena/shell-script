@@ -1,5 +1,8 @@
 #!/bin/bash
 
+DATE =$(date %F)
+SCRIPTNAME=$0
+LOGFILE=/tmp/SCRIPTNAME-DATE.log
 validate()
 {
 if [ $1 -ne 0 ]
@@ -19,9 +22,9 @@ then
  #else
   #  echo "Please get root user access"   
 fi
-yum install mysql -y
+yum install mysql -y &>>LOGFILE
 validate $? mysql
- yum install postfix -y
+ yum install postfix -y &>>LOGFILE
  validate $? postfix
  
 
