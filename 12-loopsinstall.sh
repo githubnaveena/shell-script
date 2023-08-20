@@ -33,5 +33,5 @@ do
     else
         echo -e "$G package is already installed$N"  
     fi      
-    #validate $? "$i"
+    validate $? "$i"
 done
