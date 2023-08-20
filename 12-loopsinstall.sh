@@ -19,7 +19,7 @@ fi
 #  echo -e "$G $1 Sucess $N" 
 # }
 
-for i in {@}
+for i in @
 do
     sudo yum install $i -y
     #validate $i
