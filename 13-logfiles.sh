@@ -1,5 +1,5 @@
 #!/bin/bash
-APP_LOGS_DIR=/home/centos/app-logs
+APP_LOGS_DIR=/app-logs
 SCRIPTNAME=$0
 DATE=$(date +%F)
 LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
