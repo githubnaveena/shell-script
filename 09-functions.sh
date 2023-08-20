@@ -2,7 +2,7 @@
 
 DATE =$(date +%F)
 SCRIPTNAME=$0
-LOGFILE=/tmp/SCRIPTNAME-DATE.log
+LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
 validate()
 {
 if [ $1 -ne 0 ]
