@@ -21,6 +21,6 @@ fi
 
 for i in @
 do
-    sudo yum install $i -y
+    yum install $i -y
     #validate $i
 done
