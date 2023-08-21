@@ -3,9 +3,10 @@
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+LOG_DIR=/home/centos/shell-script-logs
 SCRIPTNAME=$0
 DATE=$(date +%F)
-LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
+LOGFILE=$LOG_DIR/$SCRIPTNAME-$DATE.log
 userid=$(id -u)
 if [ $userid -ne 0 ]
 then
@@ -18,6 +19,7 @@ validate()
  if [ $1 -ne 0 ]
   then
  echo -e "$R $2 is Failure $N"
+ exit 1
  else
  echo -e "$G $2 Sucess $N" 
  fi
