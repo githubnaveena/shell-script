@@ -7,13 +7,11 @@ for i in "${Names[@]}"
 do
  if [[ $i == "Mongodb" || $i=="MySql" ]]
 then
-    instance_type = "t3.medium"
+    Instance_type= "t3.medium"
 else
-    instance_type="t2.micro"  
+    Instance_type="t2.micro"  
 fi      
 echo "Name is $i"
-aws ec2 run-instances --image-id $Image_id
---instance-type $Instance_type --security-group-ids  $security_GID
- --tag-specifications "ResourceType=instance,Tags= [{Key=Name,Value=$i}]" 
+aws ec2 run-instances --image-id $Image_id --instance-type $Instance_type --security-group-ids  $security_GID  --tag-specifications "ResourceType=instance,Tags= [{Key=Name,Value=$i}]" 
 echo "created $i successfully"
 done
