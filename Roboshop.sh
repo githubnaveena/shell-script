@@ -3,3 +3,4 @@ Names=("Mongodb" "Redis" "MySql" "Rabbit" "Catalogue" "Cart" "User" "Shipping" "
 for i in "$(Names{@})"
 then
 echo "NAme is "$i"
+done
