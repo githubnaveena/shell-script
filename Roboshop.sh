@@ -13,7 +13,6 @@ else
 fi      
 echo "Name is $i"
 ip_address=$(aws ec2 run-instances --image-id $Image_id --instance-type $Instance_type --security-group-ids
-  $security_GID  --tag-specifications "ResourceType=instance,Tags= [{Key=Name,Value=$i}]" | Jq -r '.Instances[0].PrivateIpAddress')
-  echo "created $i successfully"
-  echo "IP: $ip_address"
-done
+  $security_GID  --tag-specifications "ResourceType=instance,Tags= [{Key=Name,Value=$i}]" |  jq -r '.Instances[0].PrivateIpAddress')
+    echo "created $i successfully with ip $ipaddress"
+  done
