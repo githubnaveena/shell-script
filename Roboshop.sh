@@ -12,6 +12,8 @@ else
     Instance_type="t2.micro"  
 fi      
 echo "Name is $i"
-aws ec2 run-instances --image-id $Image_id --instance-type $Instance_type --security-group-ids  $security_GID  --tag-specifications "ResourceType=instance,Tags= [{Key=Name,Value=$i}]" 
-echo "created $i successfully"
+ip_address=$(aws ec2 run-instances --image-id $Image_id --instance-type $Instance_type --security-group-ids
+  $security_GID  --tag-specifications "ResourceType=instance,Tags= [{Key=Name,Value=$i}]" | Jq -r '.Instance[0].PrivateIpAddress')
+  echo "created $i successfully"
+  echo "IP: $ip_address"
 done
