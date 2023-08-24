@@ -7,7 +7,7 @@ for i in "${Names[@]}"
 do
  if [[ $i == "Mongodb" || $i=="MySql" ]]
 then
-    Instance_type= "t3.medium"
+    Instance_type="t3.medium" 
 else
     Instance_type="t2.micro"  
 fi      
